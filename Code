@@ -10,17 +10,28 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             double SideA, SideB, SideC;
-            
-            Console.Write("Enter the value for side A: ");
-            SideA = double.Parse(Console.ReadLine());
+            try
+            {
+                Console.Write("Enter the value for side A: ");
+                SideA = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter the value for side B: ");
-            SideB = double.Parse(Console.ReadLine());
+                Console.Write("Enter the value for side B: ");
+                SideB = double.Parse(Console.ReadLine());
 
-            SideC = Math.Sqrt((SideA * SideA) + (SideB * SideB));
-            SideC=Math.Round(SideC, 2);
-            Console.WriteLine($"Side C is {SideC}");
-            Console.ReadLine();
+                SideC = Math.Sqrt((SideA * SideA) + (SideB * SideB));
+                SideC = Math.Round(SideC, 2);
+                Console.WriteLine($"Side C is {SideC}");
+                Console.Write("Enter the value for side B: ");
+            }
+            catch
+            {
+                Console.Write("Inputs are in wrong format");
+
+            }
+            finally
+            {
+                Console.ReadKey();
+            }
 
         }
 
